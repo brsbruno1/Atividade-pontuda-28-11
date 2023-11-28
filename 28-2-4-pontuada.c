@@ -5,41 +5,39 @@ int main()
 
     setlocale(LC_ALL, "portuguese");
 
-    int num, i;
-    int somaPares = 0, qntPares = 0;
+    int num[5], i;
+    int somaMedia = 0, somaPares = 0, qntPares = 0;
     int qntImpares = 0, qntNegativos = 0;
-    int maior, menor;
-    float mediaPares, mediaTotal = 0;
+    int maior = 0, menor;
+    float mediaTotal, mediaPares;
 
     for (i = 0; i < 5; i++)
     {
-        printf("Digite o %dª número: ", i + 1);
-        scanf("%d", &num);
+        printf("Digite o %iª numero: ", i + 1);
+        scanf("%d", &num[i]);
+        if (num[i] % 2 == 0)
+        {
+            somaPares += num[i];
+            qntPares++;
+        }
+        if (num[i] % 2 != 0)
+        {
+            qntImpares++;
+        }
+        if (num[i] < 0)
+        {
+            qntNegativos++;
+        }
+        if (num[i] > maior)
+        {
+            maior = num[i];
+        }
+        if (num[i] < menor)
+        {
+            menor = num[i];
+        }
+        somaMedia += num[i];
     }
-
-    if (num % 2 == 0)
-    {
-        somaPares += num;
-        qntPares++;
-    }
-    if (num % 2 != 0)
-    {
-        qntImpares++;
-    }
-    if (num < 0)
-    {
-        qntNegativos++;
-    }
-    if (i == 0 || num > maior)
-    {
-        maior = num;
-    }
-    if (i == 0 || num < menor)
-    {
-        menor = num;
-    }
-
-    mediaTotal += num;
 
     if (qntPares > 0)
     {
@@ -50,7 +48,7 @@ int main()
         mediaPares = 0;
     }
 
-    mediaTotal /= 5;
+    mediaTotal = somaMedia / (float)i;
 
     printf("Quantidade de números ímpares: %d\n", qntImpares);
     printf("Quantidade de números negativos: %d\n", qntNegativos);
