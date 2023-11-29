@@ -8,7 +8,7 @@ int main()
     int num[5], i;
     int somaMedia = 0, somaPares = 0, qntPares = 0;
     int qntImpares = 0, qntNegativos = 0;
-    int maior = 0, menor;
+    int maior = 0, menor = 999;
     float mediaTotal, mediaPares;
 
     for (i = 0; i < 5; i++)
