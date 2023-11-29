@@ -16,10 +16,9 @@ int main()
     {
         printf("1 - Adicionar novo numero. \n");
         printf("2 - Exibir os numeros salvos. \n");
-        printf("\nDigite a opção ");
+        printf("\nDigite a opÃ§Ã£o ");
         scanf("%d", &num);
       
-
         fflush(stdin);
 
         switch (num)
@@ -49,7 +48,7 @@ int main()
             break;
 
         default:
-            printf("Opção invalida. \n");
+            printf("OpÃ§Ã£o invalida. \n");
             break;
         }
 
